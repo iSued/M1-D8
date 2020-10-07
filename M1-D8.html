@@ -129,11 +129,11 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       */
       function getTasksAsArray(){
          arrayOfList=[];
-         let tasknodeList=document.querySelectorAll('li')
-         console.log(typeof tasknodeList)
+         let taskUlList=document.querySelectorAll('li')
+         console.log(typeof taskUlList)
          
-         for(let i=0 ; i<tasknodeList.length; i++){
-            arrayOfList.push(tasknodeList[i].innerText);
+         for(let i=0 ; i<taskUlList.length; i++){
+            arrayOfList.push(taskUlList[i].innerText);
             
          }
          console.log(arrayOfList)
