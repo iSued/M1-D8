@@ -33,7 +33,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       border-radius: 20px;
       font-weight: bold;
       font-size: 30px;
-      height: 200%;
+      
      
 };
 
@@ -68,7 +68,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
    <hr />
 
-   <input type="color" placeholder="Color" id="colorPicker">
+   <input type="color" id="colorPicker">
    <input type="button"  value="Change task background" onclick="changeTaskBackgroundColor()">
 
    <hr />
@@ -76,7 +76,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
    <input type="button" value="Sort" onclick="bubbleSort()" />
 
    <script>
-      function addNewTask() {
+     
          /* EXERCISE 5: 
              Add a new task to the list.
              Suggestion:
@@ -84,7 +84,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
              - Use the document.createElement to create the new List Item
              - Append the child to the UL
          */
-         let ulRef=document.querySelector('#myTaskList');
+         function addNewTask() {
+         let ulref=document.querySelector('#myTaskList');
        
          if(newTask.value !=='' ){
             changeTaskBackgroundColor()
@@ -92,7 +93,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
          inputTask=newTask.value;
       
          newItem.innerText=inputTask;
-         ulRef.appendChild(newItem);
+         ulref.appendChild(newItem);
          newTask.value=''
          }
          else{
@@ -104,8 +105,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
           Implement a method "removeLast" which 
           removes the last item from the task list
       */function removeLast(){
-         let ulRef=document.querySelector('#myTaskList');
-         let liRef=document.querySelectorAll('li')        
+         let ulref=document.querySelector('#myTaskList');
+         let liref=document.querySelectorAll('li')        
          ulRef.removeChild(liRef[liRef.length-1])
          
 
@@ -115,8 +116,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             Implement a method "removeFirst" which removes the first item from the task list
       */
       function removeFirst(){
-         let ulRef=document.querySelector('#myTaskList');
-         let liRef=document.querySelectorAll('li')        
+         let ulref=document.querySelector('#myTaskList');
+         let liref=document.querySelectorAll('li')        
          ulRef.removeChild(liRef[0])
          
 
@@ -147,10 +148,10 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       */
          function changeTaskBackgroundColor(){
          
-         let ulRef=document.querySelector('#myTaskList');
+         let ulref=document.querySelector('#myTaskList');
            pickedColor = colorPicker.value
         
-            ulRef.style.backgroundColor=pickedColor
+            ulref.style.backgroundColor=pickedColor
          }
 
 
@@ -166,7 +167,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
          - Reuse the functions previously created
       */
       function bubbleSort(){
-         let ulRef=document.querySelector('#myTaskList');
+         let ulref=document.querySelector('#myTaskList');
       
          inputArray=getTasksAsArray();
          
@@ -174,11 +175,11 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
          
          console.log(sortedArray)
         
-          ulRef.innerHTML=""
+          ulref.innerHTML=""
          for(let i=0 ; i<sortedArray.length; i++){
          let addLi=document.createElement('li');
          addLi.innerText=sortedArray[i];
-         ulRef.appendChild(addLi)
+         ulref.appendChild(addLi)
          }
       }
    </script>
